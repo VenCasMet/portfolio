@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     title: "Piyush Sharma | Full Stack Developer",
     description:
       "Projects, experience, and achievements in full-stack development, real-time systems, and modern web technologies.",
-    url: "https://your-domain.vercel.app", // 🔁 replace after deploy
+    url: "https://myportfolio-eight-kappa-26.vercel.app",
     siteName: "Piyush Sharma Portfolio",
     images: [
       {
-        url: "/og.png", // must exist in /public
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Piyush Sharma Portfolio",
