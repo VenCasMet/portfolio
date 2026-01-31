@@ -117,7 +117,7 @@ const projects = [
       "Reinforces foundational web development and JS event handling.",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/VenCasMet/tictactoe",
-    live: "",
+    live: "https://vencasmet.github.io/tictactoe/",
   },
 ];
 
