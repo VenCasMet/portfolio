@@ -4,9 +4,36 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectModal from "@/components/ProjectModal";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  tech: string[];
+  github?: string;
+  live?: string;
+  featured?: boolean;
+};
+
+const projects: Project[] = [
+  {
+    title: "SentinelAI – Intelligent API Security Gateway",
+    featured: true, // ⭐ FEATURED
+    description: "Adaptive API security and rate-limiting system",
+    problem:
+      "Traditional API security systems rely on static rules and fail to adapt to evolving attack patterns.",
+    solution:
+      "Designed an adaptive security gateway with risk scoring, Redis-backed rate limiting, TTL-based IP bans, and admin control APIs.",
+    impact:
+      "Dynamically blocked malicious traffic while maintaining low latency for legitimate users.",
+    tech: ["NestJS", "Redis", "Docker", "API Security", "Rate Limiting"],
+    github: "https://github.com/VenCasMet/SentinelAI",
+    live: "",
+  },
   {
     title: "FinBoard – Real-Time Finance Dashboard",
+    featured: true, // ⭐ FEATURED
     description: "Configurable finance dashboard with live stock data",
     problem:
       "Market data APIs were unreliable, causing frequent chart and data failures.",
@@ -36,7 +63,6 @@ const projects = [
       "Achieved RMSE between 4.8%–9.5% and improved short-term prediction reliability.",
     tech: ["Python", "Flask", "ARIMA", "LSTM", "NLTK", "Machine Learning"],
     github: "https://github.com/VenCasMet/Stockprediction",
-    live: "",
   },
   {
     title: "Expense Tracker Dashboard",
@@ -62,7 +88,6 @@ const projects = [
       "Demonstrates understanding of game loops, object interaction, and player control logic.",
     tech: ["Unity", "C#", "3D Game Logic"],
     github: "https://github.com/VenCasMet/3d_runner",
-    live: "",
   },
   {
     title: "3D Tower Defense (OpenGL)",
@@ -75,11 +100,7 @@ const projects = [
       "Shows understanding of real-time rendering, collision detection, and system design.",
     tech: ["C++", "OpenGL", "GLUT", "Graphics Programming"],
     github: "https://github.com/VenCasMet/Tower_Defense",
-    live: "",
   },
-  
-  
-  
   {
     title: "Hunger Feast – Multiplayer Snake Game",
     description: "Full-stack interactive snake game with persistence",
@@ -91,7 +112,6 @@ const projects = [
       "Increased player retention by 30–40% through enhanced gameplay mechanics.",
     tech: ["JavaScript", "HTML", "CSS", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/VenCasMet/Hungerfest",
-    live: "",
   },
   {
     title: "CRUD Web App",
@@ -104,7 +124,6 @@ const projects = [
       "Provides solid foundational experience in API design and DB interaction.",
     tech: ["Node.js", "Express", "MongoDB", "REST API"],
     github: "https://github.com/VenCasMet/crud_app",
-    live: "",
   },
   {
     title: "Tic-Tac-Toe Web Game",
@@ -121,10 +140,8 @@ const projects = [
   },
 ];
 
-
 export default function Projects() {
-  const [activeProject, setActiveProject] =
-    useState<null | (typeof projects)[0]>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <section
@@ -132,11 +149,7 @@ export default function Projects() {
       className="w-full py-20 md:py-28 bg-white dark:bg-black"
     >
       <div className="mx-auto max-w-6xl px-6">
-        
-        {/* Section heading */}
-        <h2 className="text-3xl md:text-4xl font-bold">
-          Projects
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold">Projects</h2>
         <p className="mt-2 mb-12 text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl">
           Selected projects showcasing real-world problem solving and technical depth.
         </p>
@@ -160,6 +173,12 @@ export default function Projects() {
                 transition-all duration-300
               "
             >
+              {project.featured && (
+                <span className="mb-2 inline-block text-xs font-semibold text-yellow-600 dark:text-yellow-400">
+                  ⭐ Featured Project
+                </span>
+              )}
+
               <h3 className="text-lg font-semibold text-black dark:text-white">
                 {project.title}
               </h3>
@@ -168,7 +187,6 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {/* Tech preview */}
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tech.slice(0, 4).map((tech) => (
                   <span
@@ -180,12 +198,12 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* Links */}
               <div className="mt-6 flex gap-4 text-sm text-zinc-500">
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
+                    rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                     className="hover:text-black dark:hover:text-white transition"
                   >
@@ -196,6 +214,7 @@ export default function Projects() {
                   <a
                     href={project.live}
                     target="_blank"
+                    rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                     className="hover:text-black dark:hover:text-white transition"
                   >
