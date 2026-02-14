@@ -18,37 +18,53 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "SentinelAI – Intelligent API Security Gateway",
-    featured: true, // ⭐ FEATURED
-    description: "Adaptive API security and rate-limiting system",
+    title: "SentinelAI — API Security Gateway",
+    featured: true,
+    description:
+      "Adaptive security gateway with risk scoring and dynamic rate limiting.",
     problem:
-      "Traditional API security systems rely on static rules and fail to adapt to evolving attack patterns.",
+      "Static API defenses fail against evolving malicious traffic patterns.",
     solution:
-      "Designed an adaptive security gateway with risk scoring, Redis-backed rate limiting, TTL-based IP bans, and admin control APIs.",
+      "Implemented Redis-backed rate limiting, risk scoring, and automated bans.",
     impact:
-      "Dynamically blocked malicious traffic while maintaining low latency for legitimate users.",
-    tech: ["NestJS", "Redis", "Docker", "API Security", "Rate Limiting"],
+      "Protects APIs in real time while maintaining low latency.",
+    tech: ["NestJS", "Redis", "Docker", "Security"],
     github: "https://github.com/VenCasMet/SentinelAI",
     live: "",
   },
   {
-    title: "FinBoard – Real-Time Finance Dashboard",
-    featured: true, // ⭐ FEATURED
-    description: "Configurable finance dashboard with live stock data",
+    title: "VCM_AI — AI Multi-Model Platform",
+    featured: true,
+    description:
+      "Unified AI platform integrating multiple LLM providers for generation, reasoning, and task automation.",
     problem:
-      "Market data APIs were unreliable, causing frequent chart and data failures.",
+      "Developers often need to switch between multiple AI tools manually with inconsistent outputs.",
     solution:
-      "Designed a multi-provider architecture using Alpha Vantage, Finnhub, and TwelveData with fallback and client-side caching.",
+      "Built a centralized interface that routes requests to different models and aggregates results.",
     impact:
-      "Reduced failed API requests by 70% and ensured reliable chart rendering across multiple intervals.",
+      "Improves productivity by providing a single gateway for AI experimentation and workflows.",
     tech: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Recharts",
-      "Zustand",
-      "Vercel",
+      "Python",
+      "LLM Stack",
+      "PyAudio",
+      "PyQt5",
     ],
+    github: "https://github.com/VenCasMet/VCM_AI",
+    live: "",
+  },
+
+  {
+    title: "FinBoard — Real-Time Finance Dashboard",
+    featured: true,
+    description:
+      "Configurable finance dashboard with resilient multi-provider stock data.",
+    problem:
+      "Market APIs frequently fail or rate-limit requests.",
+    solution:
+      "Fallback architecture across multiple providers with caching.",
+    impact:
+      "Reduced failures by ~70% and ensured consistent charts.",
+    tech: ["Next.js", "TypeScript", "Recharts", "Zustand"],
     github: "https://github.com/VenCasMet/finboard",
     live: "https://financedashboard-git-main-vencasmets-projects.vercel.app/",
   },
@@ -63,6 +79,21 @@ const projects: Project[] = [
       "Achieved RMSE between 4.8%–9.5% and improved short-term prediction reliability.",
     tech: ["Python", "Flask", "ARIMA", "LSTM", "NLTK", "Machine Learning"],
     github: "https://github.com/VenCasMet/Stockprediction",
+  },
+  
+  {
+    title: "FootballXI — Team Builder App",
+    description:
+      "Interactive football lineup builder for creating and visualizing team formations.",
+    problem:
+      "Fans lack simple tools to visualize custom team strategies.",
+    solution:
+      "Built drag-and-drop player positioning and formation selection.",
+    impact:
+      "Useful for tactical planning and sports discussions.",
+    tech: ["React", "UI Design", "JavaScript"],
+    github: "https://github.com/VenCasMet/FootballXI",
+    live: "https://vcmfootballxi.vercel.app/",
   },
   {
     title: "Expense Tracker Dashboard",

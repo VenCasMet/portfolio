@@ -6,19 +6,26 @@ const items = [
   {
     title: "Frontend Development",
     description:
-      "I build responsive, animated interfaces using React, Next.js, Tailwind CSS, and modern UI patterns.",
+      "I build responsive, high-performance interfaces using React, Next.js, and modern UI patterns with strong focus on usability and performance.",
   },
   {
     title: "Backend Development",
     description:
-      "Experienced in Node.js, Express, MongoDB, REST APIs, authentication, and real-time features.",
+      "Experienced in Node.js, Express, MongoDB, REST APIs, authentication systems, and real-time features using WebSockets.",
+  },
+  {
+    title: "AI / Machine Learning",
+    description:
+      "Hands-on experience building ML-powered applications including prediction systems, sentiment analysis, and AI integrations using Python, LSTM, ARIMA, and modern AI APIs.",
   },
   {
     title: "Problem Solving",
     description:
-      "Strong foundation in DSA, competitive programming, and writing optimized, clean code.",
+      "Strong foundation in DSA and competitive programming with a focus on writing optimized, scalable, and clean code.",
   },
+  
 ];
+
 
 export default function About() {
   return (

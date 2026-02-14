@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 
+
 const skillGroups = [
   {
     title: "Languages",
@@ -22,8 +23,11 @@ const skillGroups = [
     skills: [
       "React",
       "Next.js",
-      "Angular",
+      "TypeScript",
       "Tailwind CSS",
+      "Angular",
+      "HTML",
+      "CSS",
       "Recharts",
       "Responsive UI",
       "Dark / Light Themes",
@@ -39,10 +43,12 @@ const skillGroups = [
       "REST APIs",
       "WebSockets",
       "JWT Authentication",
+      "NestJS",
+      "Redis",
     ],
   },
   {
-    title: "Machine Learning",
+    title: "AI/ML & Data Science",
     skills: [
       "ARIMA",
       "LSTM",
@@ -50,6 +56,9 @@ const skillGroups = [
       "NLTK",
       "Data Analysis",
       "Model Evaluation (RMSE)",
+      "Machine Learning",
+      "Lovcal LLM Integration",
+      "Ollama",
     ],
   },
   {
