@@ -50,7 +50,7 @@ const projects: Project[] = [
       "PyQt5",
     ],
     github: "https://github.com/VenCasMet/VCM_AI",
-    live: "",
+    live: "https://github.com/VenCasMet/VCM_AI/releases/download/v1.0/VCM_Setup.exe",
   },
 
   {
