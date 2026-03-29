@@ -32,6 +32,21 @@ const projects: Project[] = [
     github: "https://github.com/VenCasMet/SentinelAI",
     live: "",
   },
+    {
+    title: "Graph AI Query System",
+    featured: true,
+    description:
+      "Developed an AI-powered graph-based query system that enables intelligent data retrieval and contextual reasoning using structured relationships.",
+    problem:
+      "Traditional query systems struggle with complex relational data and lack contextual understanding, making multi-hop queries inefficient and error-prone.",
+    solution:
+      "Built a Graph-RAG inspired system integrating knowledge graphs, vector search, and LLM-based query interpretation to generate accurate and context-aware responses.",
+    impact:
+      "Improved query accuracy and efficiency for complex datasets while enabling natural language interaction with structured data systems.",
+    tech: ["Node.js / NestJS", "Graph-based architecture", "AI/LLM", "Vector Search"],
+    github: "https://github.com/VenCasMet/graph-ai-query-system",
+    live: "https://graph-ai-query-system-1.onrender.com/",
+  },
   {
     title: "VCM_AI — AI Multi-Model Platform",
     featured: true,
