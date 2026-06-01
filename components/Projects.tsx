@@ -48,6 +48,21 @@ const projects: Project[] = [
     live: "",
   },
   {
+    title: "VCM_AI — AI Multi-Model Platform",
+    featured: true,
+    description:
+      "Unified AI platform integrating multiple LLM providers for generation, reasoning, and task automation.",
+    problem:
+      "Developers often need to switch between multiple AI tools manually with inconsistent outputs.",
+    solution:
+      "Built a centralized interface that routes requests to different models and aggregates results.",
+    impact:
+      "Improves productivity by providing a single gateway for AI experimentation and workflows.",
+    tech: ["Python", "LLM Stack", "PyAudio", "PyQt5"],
+    github: "https://github.com/VenCasMet/VCM_AI",
+    live: "https://github.com/VenCasMet/VCM_AI/releases/download/v1.0/VCM_Setup.exe",
+  },
+  {
     title: "Graph AI Query System",
     featured: true,
     description:
@@ -63,20 +78,27 @@ const projects: Project[] = [
     live: "https://graph-ai-query-system-1.onrender.com/",
   },
   {
-    title: "VCM_AI — AI Multi-Model Platform",
-    featured: true,
-    description:
-      "Unified AI platform integrating multiple LLM providers for generation, reasoning, and task automation.",
-    problem:
-      "Developers often need to switch between multiple AI tools manually with inconsistent outputs.",
-    solution:
-      "Built a centralized interface that routes requests to different models and aggregates results.",
-    impact:
-      "Improves productivity by providing a single gateway for AI experimentation and workflows.",
-    tech: ["Python", "LLM Stack", "PyAudio", "PyQt5"],
-    github: "https://github.com/VenCasMet/VCM_AI",
-    live: "https://github.com/VenCasMet/VCM_AI/releases/download/v1.0/VCM_Setup.exe",
-  },
+  title: "Hook Mining Engine — AI Viral Hook Generator",
+  featured: true,
+  description:
+    "AI-powered content research platform that analyzes viral content patterns from Reddit and Google to generate high-performing hooks for creators and marketers.",
+  problem:
+    "Creators and marketers often rely on intuition instead of data when writing hooks, leading to inconsistent engagement and content performance.",
+  solution:
+    "Built a full-stack AI system that mines Reddit discussions and Google search insights, identifies successful hook patterns using LLM analysis, and generates ready-to-use viral hooks instantly.",
+  impact:
+    "Transforms content ideation from guesswork into a data-driven workflow by combining real-world content signals with AI-powered pattern extraction.",
+  tech: [
+    "Node.js",
+    "Express",
+    "Groq LLaMA",
+    "Serper API",
+    "Reddit API",
+    "JavaScript",
+  ],
+  github: "https://github.com/VenCasMet/HookMiningEngine",
+  live: "https://hookminingengine.onrender.com/",
+},
   {
     title: "FinBoard — Real-Time Finance Dashboard",
     description:
