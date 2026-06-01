@@ -2,28 +2,20 @@
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-black/10 dark:border-white/10">
-      
-      {/* Subtle top glow */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/20 to-transparent dark:via-white/20" />
+    <footer className="relative border-t border-white/10 bg-slate-950/80">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
 
-      <div className="mx-auto max-w-5xl px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-zinc-600 dark:text-zinc-400">
-        
-        {/* Left */}
-        <p className="text-center md:text-left">
-          © {new Date().getFullYear()}{" "}
-          <span className="font-medium text-black dark:text-white">
-            Piyush Sharma
-          </span>
+      <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
+        <p className="text-center md:text-left text-slate-300">
+          © {new Date().getFullYear()} <span className="font-medium text-white">Piyush Sharma</span>
         </p>
 
-        {/* Right */}
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-6">
           <a
             href="https://github.com/VenCasMet"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition"
+            className="transition hover:text-white"
           >
             GitHub
           </a>
@@ -31,13 +23,13 @@ export default function Footer() {
             href="https://www.linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition"
+            className="transition hover:text-white"
           >
             LinkedIn
           </a>
           <a
             href="mailto:piyushsharma1729@gmail.com"
-            className="hover:text-black dark:hover:text-white transition"
+            className="transition hover:text-white"
           >
             Email
           </a>

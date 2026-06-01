@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -18,6 +18,21 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "MediaFlux — AI Media Optimization Platform",
+    featured: true,
+    description:
+      "Production-style Flutter + FastAPI platform for intelligent image optimization, analysis, and real-time processing.",
+    problem:
+      "Traditional image compressors provide limited feedback, poor UX, and no visibility into optimization quality, while large media batches require scalable processing and progress tracking.",
+    solution:
+      "Built a full-stack system using Flutter and FastAPI featuring asynchronous job processing, adaptive compression, target-size optimization, heatmap generation, before/after comparisons, progressive result streaming, auto-scroll UX, and real-time progress synchronization.",
+    impact:
+      "Evolved from a simple image compressor into a production-style media optimization platform supporting batch uploads, live processing updates, intelligent quality preservation, analysis pipelines, and deployment-ready architecture.",
+    tech: ["Flutter", "FastAPI", "Python", "Pillow", "Dart", "REST APIs", "Threading", "Uvicorn"],
+    github: "https://github.com/VenCasMet/appbackendmediaflux",
+    live: "https://github.com/VenCasMet/appbackendmediaflux/releases/download/v1.0/app-release.apk",
+  },
+  {
     title: "SentinelAI — API Security Gateway",
     featured: true,
     description:
@@ -32,7 +47,7 @@ const projects: Project[] = [
     github: "https://github.com/VenCasMet/SentinelAI",
     live: "",
   },
-    {
+  {
     title: "Graph AI Query System",
     featured: true,
     description:
@@ -58,19 +73,12 @@ const projects: Project[] = [
       "Built a centralized interface that routes requests to different models and aggregates results.",
     impact:
       "Improves productivity by providing a single gateway for AI experimentation and workflows.",
-    tech: [
-      "Python",
-      "LLM Stack",
-      "PyAudio",
-      "PyQt5",
-    ],
+    tech: ["Python", "LLM Stack", "PyAudio", "PyQt5"],
     github: "https://github.com/VenCasMet/VCM_AI",
     live: "https://github.com/VenCasMet/VCM_AI/releases/download/v1.0/VCM_Setup.exe",
   },
-
   {
     title: "FinBoard — Real-Time Finance Dashboard",
-    featured: true,
     description:
       "Configurable finance dashboard with resilient multi-provider stock data.",
     problem:
@@ -95,7 +103,6 @@ const projects: Project[] = [
     tech: ["Python", "Flask", "ARIMA", "LSTM", "NLTK", "Machine Learning"],
     github: "https://github.com/VenCasMet/Stockprediction",
   },
-  
   {
     title: "FootballXI — Team Builder App",
     description:
@@ -160,18 +167,6 @@ const projects: Project[] = [
     github: "https://github.com/VenCasMet/Hungerfest",
   },
   {
-    title: "CRUD Web App",
-    description: "Full stack CRUD web application demonstrating backend fundamentals",
-    problem:
-      "Needed to master backend routing, controllers, and data persistence workflows.",
-    solution:
-      "Created a REST API with database integration enabling full CRUD operations.",
-    impact:
-      "Provides solid foundational experience in API design and DB interaction.",
-    tech: ["Node.js", "Express", "MongoDB", "REST API"],
-    github: "https://github.com/VenCasMet/crud_app",
-  },
-  {
     title: "Tic-Tac-Toe Web Game",
     description: "Classic Tic-Tac-Toe game built with HTML, CSS & JavaScript",
     problem:
@@ -190,99 +185,56 @@ export default function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
-    <section
-      id="projects"
-      className="w-full py-20 md:py-28 bg-white dark:bg-black"
-    >
+    <section id="projects" className="w-full py-20 md:py-28 bg-transparent">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-3xl md:text-4xl font-bold">Projects</h2>
-        <p className="mt-2 mb-12 text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl">
-          Selected projects showcasing real-world problem solving and technical depth.
-        </p>
+        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
+            <p className="mt-3 max-w-2xl text-sm text-slate-300">
+              Selected projects showcasing real-world problem solving and technical depth.
+            </p>
+          </div>
+        </div>
 
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project) => (
-            <motion.div
+            <motion.button
               key={project.title}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 260 }}
               onClick={() => setActiveProject(project)}
-              className="
-                cursor-pointer rounded-xl p-6
-                bg-gradient-to-b from-zinc-50 to-zinc-100
-                dark:from-zinc-900 dark:to-zinc-950
-                border border-black/10 dark:border-white/10
-                shadow-[0_0_0_1px_rgba(0,0,0,0.04)]
-                dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)]
-                hover:shadow-[0_0_35px_rgba(0,0,0,0.1)]
-                dark:hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]
-                transition-all duration-300
-              "
+              className="group cursor-pointer overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 text-left shadow-2xl shadow-cyan-500/5 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30"
             >
               {project.featured && (
-                <span className="mb-2 inline-block text-xs font-semibold text-yellow-600 dark:text-yellow-400">
-                  ⭐ Featured Project
+                <span className="mb-3 inline-flex rounded-full bg-cyan-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                  Featured
                 </span>
               )}
 
-              <h3 className="text-lg font-semibold text-black dark:text-white">
-                {project.title}
-              </h3>
+              <h3 className="text-xl font-semibold text-white">{project.title}</h3>
 
-              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                {project.description}
-              </p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">{project.description}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tech.slice(0, 4).map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10"
-                  >
+                  <span key={tech} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-6 flex gap-4 text-sm text-zinc-500">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="hover:text-black dark:hover:text-white transition"
-                  >
-                    GitHub →
-                  </a>
-                )}
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="hover:text-black dark:hover:text-white transition"
-                  >
-                    Live →
-                  </a>
-                )}
+              <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-400">
+                {project.github && <span className="group-hover:text-white transition">GitHub →</span>}
+                {project.live && <span className="group-hover:text-white transition">Live →</span>}
               </div>
 
-              <p className="mt-4 text-xs text-zinc-500">
-                Click card to view full case study →
-              </p>
-            </motion.div>
+              <p className="mt-4 text-xs text-slate-500">Click to view the full case study.</p>
+            </motion.button>
           ))}
         </div>
       </div>
 
-      {activeProject && (
-        <ProjectModal
-          project={activeProject}
-          onClose={() => setActiveProject(null)}
-        />
-      )}
+      {activeProject && <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />}
     </section>
   );
 }

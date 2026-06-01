@@ -1,84 +1,110 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 
 const achievements = [
   {
-    title: "LeetCode",
-    value: "1600+ Rating",
-    description: "Top 22.5%, 500+ problems solved",
+    platform: "LeetCode",
+    rating: "1600+",
+    title: "Top 22.5%",
+    solved: "500+ Problems Solved",
     emoji: "🏆",
+    link: "https://leetcode.com/u/VenCasMet/",
   },
   {
-    title: "CodeChef",
-    value: "3-Star Coder",
-    description: "1600+ rating, 200+ problems solved",
+    platform: "CodeChef",
+    rating: "3★",
+    title: "1600+ Rating",
+    solved: "200+ Problems Solved",
     emoji: "⭐",
+    link: "https://www.codechef.com/users/vencasmet",
   },
   {
-    title: "Codeforces",
-    value: "1100+ Rating",
-    description: "100+ problems solved",
-    emoji: "📊",
+    platform: "Codeforces",
+    rating: "1100+",
+    title: "Competitive Programming",
+    solved: "100+ Problems Solved",
+    emoji: "📈",
+    link: "https://codeforces.com/profile/Vencas",
   },
+];
+
+const metrics = [
+  { value: "800+", label: "Problems Solved" },
+  { value: "1600+", label: "Peak Rating" },
+  { value: "3★", label: "CodeChef" },
+  { value: "Top 22%", label: "LeetCode" },
 ];
 
 export default function Achievements() {
   return (
-    <section
-      id="achievements"
-      className="w-full py-20 md:py-28 bg-white dark:bg-black"
-    >
-      <div className="mx-auto max-w-5xl px-6">
-        
-        {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
-          Achievements
-        </h2>
-        <p className="mt-2 mb-12 text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl">
-          Competitive programming milestones that highlight consistency and
-          problem-solving skills.
-        </p>
+    <section id="achievements" className="relative w-full py-20 md:py-28 bg-transparent">
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-10 max-w-3xl"
+        >
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/90">Achievements</p>
+          <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white">
+            Competitive programming results and performance milestones.
+          </h2>
+          <p className="mt-5 text-base leading-8 text-slate-300">
+            A quick snapshot of ratings, solved problems, and competitive growth across LeetCode, CodeChef, and Codeforces.
+          </p>
+        </motion.div>
+
+        <div className="grid gap-4 md:grid-cols-4 mb-12">
+          {metrics.map((metric) => (
+            <motion.div
+              key={metric.label}
+              whileHover={{ y: -4 }}
+              className="rounded-[1.75rem] border border-white/10 bg-slate-950/80 p-6 text-center text-white shadow-lg shadow-cyan-500/5 transition-all duration-300"
+            >
+              <p className="text-3xl font-semibold">{metric.value}</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.25em] text-slate-400">{metric.label}</p>
+            </motion.div>
+          ))}
+        </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           {achievements.map((item, index) => (
-            <motion.div
-              key={item.title}
+            <motion.a
+              key={item.platform}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
               viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-              className="
-                rounded-xl p-6 text-center
-                bg-gradient-to-b from-zinc-50 to-zinc-100
-                dark:from-zinc-900 dark:to-zinc-950
-                border border-black/10 dark:border-white/10
-                shadow-[0_0_0_1px_rgba(0,0,0,0.04)]
-                dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)]
-                hover:shadow-[0_0_30px_rgba(0,0,0,0.08)]
-                dark:hover:shadow-[0_0_35px_rgba(255,255,255,0.12)]
-                transition-all duration-300
-              "
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-8 text-white shadow-2xl shadow-cyan-500/5 transition-all duration-300"
             >
-              {/* Emoji */}
-              <div className="mb-4 text-4xl">
+              <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-cyan-500/10 text-4xl text-cyan-300">
                 {item.emoji}
               </div>
-
-              <h3 className="text-lg font-semibold text-black dark:text-white">
-                {item.title}
-              </h3>
-
-              <p className="mt-2 text-sm font-medium text-black dark:text-white">
-                {item.value}
-              </p>
-
-              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                {item.description}
-              </p>
-            </motion.div>
+              <h3 className="mt-6 text-xl font-semibold text-white">{item.platform}</h3>
+              <p className="mt-4 text-4xl font-bold text-white">{item.rating}</p>
+              <p className="mt-2 text-sm text-slate-400">{item.title}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">{item.solved}</p>
+              <p className="mt-6 text-sm font-medium text-cyan-300">View Profile →</p>
+            </motion.a>
           ))}
+        </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-5 text-sm text-slate-400">
+          <a href="https://leetcode.com/u/VenCasMet/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+            LeetCode
+          </a>
+          <a href="https://www.codechef.com/users/vencasmet" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+            CodeChef
+          </a>
+          <a href="https://codeforces.com/profile/Vencas" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+            Codeforces
+          </a>
         </div>
       </div>
     </section>

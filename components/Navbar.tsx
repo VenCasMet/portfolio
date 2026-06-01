@@ -1,29 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      
-      {/* Glass background */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-md border-b border-white/10" />
-
-      {/* Subtle bottom glow */}
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
-      <div className="relative mx-auto max-w-5xl px-6 h-16 flex items-center justify-between">
-        
-        {/* Logo / Name */}
-        <Link
-          href="#"
-          className="text-sm font-semibold tracking-wide text-white"
-        >
-          Piyush<span className="text-zinc-400">.</span>
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <Link href="#" className="text-sm font-semibold tracking-[0.2em] text-white">
+          PIYUSH<span className="text-cyan-400">.</span>
         </Link>
 
-        {/* Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm text-zinc-300">
+        <div className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
           <a href="#about" className="hover:text-white transition">
             About
           </a>
@@ -41,20 +31,45 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* CTA */}
-        <a
-          href="/Piyush_Resume.pdf"
-          className="
-            rounded-full px-4 py-2 text-xs font-medium
-            border border-white/20
-            text-white
-            hover:bg-white hover:text-black
-            transition
-          "
-        >
-          Resume
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="/Piyush_Resume.pdf"
+            className="hidden rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-medium text-white transition hover:border-cyan-400 hover:bg-cyan-500/15 hover:text-cyan-100 md:inline-flex"
+          >
+            Resume
+          </a>
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white transition hover:bg-white/15 md:hidden"
+            aria-label="Toggle navigation menu"
+          >
+            <span className="text-xl">{menuOpen ? "×" : "☰"}</span>
+          </button>
+        </div>
       </div>
+
+      {menuOpen && (
+        <div className="border-t border-white/10 bg-slate-950/95 px-4 py-4 backdrop-blur-xl md:hidden">
+          <div className="flex flex-col gap-3 text-sm text-slate-200">
+            <a href="#about" onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 hover:bg-white/10 transition">
+              About
+            </a>
+            <a href="#experience" onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 hover:bg-white/10 transition">
+              Experience
+            </a>
+            <a href="#projects" onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 hover:bg-white/10 transition">
+              Projects
+            </a>
+            <a href="#skills" onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 hover:bg-white/10 transition">
+              Skills
+            </a>
+            <a href="#contact" onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 hover:bg-white/10 transition">
+              Contact
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
