@@ -20,17 +20,58 @@ const projects: Project[] = [
   {
     title: "MediaFlux — AI Media Optimization Platform",
     featured: true,
-    description:
-      "Production-style Flutter + FastAPI platform for intelligent image optimization, analysis, and real-time processing.",
-    problem:
-      "Traditional image compressors provide limited feedback, poor UX, and no visibility into optimization quality, while large media batches require scalable processing and progress tracking.",
-    solution:
-      "Built a full-stack system using Flutter and FastAPI featuring asynchronous job processing, adaptive compression, target-size optimization, heatmap generation, before/after comparisons, progressive result streaming, auto-scroll UX, and real-time progress synchronization.",
-    impact:
-      "Evolved from a simple image compressor into a production-style media optimization platform supporting batch uploads, live processing updates, intelligent quality preservation, analysis pipelines, and deployment-ready architecture.",
-    tech: ["Flutter", "FastAPI", "Python", "Pillow", "Dart", "REST APIs", "Threading", "Uvicorn"],
+  description:
+    "Production-grade Flutter + FastAPI platform for intelligent media optimization, real-time processing, and quality analysis at scale.",
+
+  problem:
+    "Most media compression tools provide only basic file reduction with no visibility into quality impact, progress tracking, or large-scale batch processing.",
+
+  solution:
+    "Engineered a full-stack asynchronous processing platform with threaded FastAPI workers, real-time job synchronization, adaptive compression, target-size optimization, progressive result streaming, heatmap analysis, quality scoring, and live frontend updates.",
+
+  impact:
+    "Transformed a simple image compressor into a production-style media processing system featuring asynchronous job execution, real-time progress propagation, progressive rendering, automated analysis pipelines, and deployment-ready architecture.",
+
+  tech: [
+    "Flutter",
+    "FastAPI",
+    "Python",
+    "Pillow",
+    "Threading",
+    "REST APIs",
+    "Real-Time Processing",
+    "System Design"
+  ],
     github: "https://github.com/VenCasMet/appbackendmediaflux",
     live: "https://github.com/VenCasMet/appbackendmediaflux/releases/download/v1.0/app-release.apk",
+  },{
+    title: "Creator Intelligence — AI Market Intelligence Platform",
+  featured: true,
+
+  description:
+    "AI-powered research platform that helps creators discover high-opportunity content niches before markets become saturated.",
+
+  problem:
+    "Content creators often choose topics based on intuition, making it difficult to identify emerging opportunities, audience demand, and competitive gaps.",
+
+  solution:
+    "Built a full-stack intelligence platform that combines search intelligence, AI reasoning, market analysis, opportunity scoring, competition analysis, content blueprint generation, hook generation, script generation, and historical research tracking.",
+
+  impact:
+    "Provides creators with data-driven content decisions through automated niche discovery, opportunity prediction, market mapping, multi-provider AI orchestration, and personalized research workflows.",
+
+  tech: [
+    "Node.js",
+    "Express",
+    "Supabase",
+    "Groq",
+    "Gemini",
+    "OpenRouter",
+    "Serper API",
+    "AI Orchestration"
+  ],
+    github: "https://github.com/VenCasMet/creatorintelli",
+    live: "https://site--creatorintelli--xrjmrgzcw9rq.code.run",
   },
   {
     title: "SentinelAI — API Security Gateway",
